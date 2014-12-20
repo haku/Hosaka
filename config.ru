@@ -1,4 +1,6 @@
-class MyStatic < Rack::Static
+require 'sinatra'
+
+class MySinatra < Sinatra::Application
 
   def call(env)
     if env['HTTP_X_FORWARDED_PROTO'] == 'https' || ENV['SECURE'] == 'false'
@@ -10,7 +12,12 @@ class MyStatic < Rack::Static
 
 end
 
-run MyStatic.new @app,
-  :urls => [""],
-  :root  => "public",
-  :index => 'index.html'
+get '/' do
+  send_file File.join(settings.public_folder, 'index.html')
+end
+
+get '/desu' do
+  'Needs more desu~'
+end
+
+run MySinatra
