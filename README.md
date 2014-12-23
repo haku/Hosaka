@@ -47,3 +47,8 @@ Thoughts
 * Sign-in via Twitter to create new accounts?  Spam prevention.
 * Copy paste API key into Onosendai (at least initially).
 * Start invite only? (preauth Twitter handles).
+
+References
+----------
+
+* http://mherman.org/blog/2013/06/08/designing-with-class-sinatra-plus-postgresql-plus-heroku/
