@@ -51,5 +51,6 @@ Thoughts
 References
 ----------
 
+* https://devcenter.heroku.com/articles/heroku-postgresql
 * http://mherman.org/blog/2013/06/08/designing-with-class-sinatra-plus-postgresql-plus-heroku/
 * http://guides.rubyonrails.org/active_record_basics.html
