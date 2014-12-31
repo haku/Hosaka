@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'securerandom'
+require 'json'
 
 SECURE = ENV['SECURE'] != 'false'
 
@@ -41,7 +43,34 @@ class KamiHandler < Sinatra::Base
   end
 
   get '/users' do
-    User.all.map{|u| u.username}.join('\n')
+    User.all.map{|u| u.username}.join("\n")
+  end
+
+  # user details
+  get '/users/:name' do |name|
+    user = User.find_by(username: name)
+    halt 404 if user.nil?
+    {
+      username: user.username,
+      created_at: user.created_at,
+      updated_at: user.updated_at
+    }.to_json
+  end
+
+  # Create new user.
+  post '/users/:name' do |name|
+    halt 400, 'Invalid username.' if !/^[a-z]+$/.match(name)
+    passwd = SecureRandom.uuid()
+    User.create(username: name, passwd: passwd)
+    {passwd: passwd}.to_json
+  end
+
+  post '/users/:name/passwdreset' do |name|
+    user = User.find_by(username: name)
+    halt 404 if user.nil?
+    passwd = SecureRandom.uuid()
+    user.update(passwd: passwd)
+    {passwd: passwd}.to_json
   end
 
 end
