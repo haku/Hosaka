@@ -55,3 +55,4 @@ References
 * http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/TableDefinition.html
 * http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html
 * http://guides.rubyonrails.org/association_basics.html
+* http://api.rubyonrails.org/classes/ActiveRecord/Transactions/ClassMethods.html
