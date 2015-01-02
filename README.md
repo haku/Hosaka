@@ -10,7 +10,7 @@ Credentials via Basic Auth.
 
 | Path          | Verb   | Notes                                                                                |
 | ----          | ----   | -----                                                                                |
-| `/me/columns` | `GET`  | Fetch state of columns (may me filterable at some point '?filter=h1:h2:h3').         |
+| `/me/columns` | `GET`  | Fetch state of columns (may be filterable at some point '?filter=h1:h2:h3').         |
 | `/me/columns` | `POST` | Write state of multiple columns.  Omitted columns are ignored.  Returns all columns. |
 
 Data Format
