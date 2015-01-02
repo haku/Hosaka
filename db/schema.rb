@@ -13,6 +13,19 @@
 
 ActiveRecord::Schema.define(version: 20141223204413) do
 
+  create_table "columns", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.string   "column_hash", null: false
+    t.string   "item_id",     null: false
+    t.integer  "item_time",   null: false
+    t.integer  "unread_time", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "columns", ["user_id", "column_hash"], name: "index_columns_on_user_id_and_column_hash", unique: true
+  add_index "columns", ["user_id"], name: "index_columns_on_user_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "passwd"
