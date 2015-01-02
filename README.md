@@ -26,6 +26,8 @@ Data Format
 }
 ```
 
+| Field            | Notes                                                        |
+| -----            | -----                                                        |
 | `column_hash`    | sha1 of `"#{account_type}:#{user_name}:#{column_resource}"`. |
 | `account_type`   | 'twitter', 'successwhale'.                                   |
 | `user_name`      | Twitter numeric account ID, SuccessWhale user name.          |
