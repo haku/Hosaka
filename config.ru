@@ -4,6 +4,6 @@ require './data'
 require './handlers'
 
 run Rack::URLMap.new({
-  '/' => MainHandler,
+  '/' => PublicHandler,
   '/kami' => KamiHandler
 })

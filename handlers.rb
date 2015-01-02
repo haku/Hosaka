@@ -14,7 +14,7 @@ class BasicOverSsl < Rack::Auth::Basic
  end
 end
 
-class MainHandler < Sinatra::Base
+class PublicHandler < Sinatra::Base
 
   get '/' do
     send_file File.join(settings.public_folder, 'index.html')
