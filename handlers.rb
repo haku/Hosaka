@@ -14,6 +14,14 @@ class BasicOverSsl < Rack::Auth::Basic
  end
 end
 
+class UserUtils
+
+  def self.valid_username?(name)
+    /^[a-z]+$/.match(name)
+  end
+
+end
+
 class PublicHandler < Sinatra::Base
 
   get '/' do
@@ -22,6 +30,28 @@ class PublicHandler < Sinatra::Base
 
   get '/desu' do
     'Needs more desu~'
+  end
+
+end
+
+class MeHandler < Sinatra::Base
+
+  use BasicOverSsl, "Protected Area" do |username, passwd|
+    if UserUtils.valid_username?(username)
+      user = User.find_by(username: username)
+      if user.nil?
+        false
+      else
+        passwd.length > 0 && passwd == user.passwd
+      end
+    else
+      false
+    end
+  end
+
+  get '/' do
+    name = request.env["REMOTE_USER"]
+    "Me access for '#{name}' desu~"
   end
 
 end
@@ -59,7 +89,7 @@ class KamiHandler < Sinatra::Base
 
   # Create new user.
   post '/users/:name' do |name|
-    halt 400, 'Invalid username.' if !/^[a-z]+$/.match(name)
+    halt 400, 'Invalid username.' unless UserUtils.valid_username?(name)
     passwd = SecureRandom.uuid()
     User.create(username: name, passwd: passwd)
     {passwd: passwd}.to_json

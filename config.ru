@@ -5,5 +5,6 @@ require './handlers'
 
 run Rack::URLMap.new({
   '/' => PublicHandler,
+  '/me' => MeHandler,
   '/kami' => KamiHandler
 })
