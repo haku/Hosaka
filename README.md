@@ -8,12 +8,10 @@ API
 
 Credentials via Basic Auth.
 
-| Path                      | Verb   | Notes                                                          |
-| ----                      | ----   | -----                                                          |
-| `/api/user/`              | `POST` | Create new account.                                            |
-| `/api/user/<uid>`         | `GET`  | Can only access own user.  User info and stats.                |
-| `/api/user/<uid>/columns` | `GET`  | Fetch state of columns, filterable '?filter=h1:h2:h3'.         |
-| `/api/user/<uid>/columns` | `POST` | Write state of multiple columns.  Omitted columns are ignored. |
+| Path          | Verb   | Notes                                                                                |
+| ----          | ----   | -----                                                                                |
+| `/me/columns` | `GET`  | Fetch state of columns (may me filterable at some point '?filter=h1:h2:h3').         |
+| `/me/columns` | `POST` | Write state of multiple columns.  Omitted columns are ignored.  Returns all columns. |
 
 Data Format
 -----------
@@ -38,6 +36,7 @@ Data Format
 
 Resolve merge conflicts by keeping version with largest `item_time`,
 i.e. furthest progress though column.
+`unread_time` merged separately.
 
 Thoughts
 --------
