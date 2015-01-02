@@ -54,6 +54,17 @@ class MeHandler < Sinatra::Base
     "Me access for '#{name}' desu~"
   end
 
+  get '/columns' do
+    name = request.env["REMOTE_USER"]
+    User.find_by(username: name).columns.each_with_object({}) do |c, h|
+      h[c.column_hash] = {
+        item_id: c.item_id,
+        item_time: c.item_time,
+        unread_time: c.unread_time
+      }
+    end.to_json
+  end
+
 end
 
 class KamiHandler < Sinatra::Base
