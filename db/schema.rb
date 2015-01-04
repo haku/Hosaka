@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141223204413) do
   create_table "columns", force: :cascade do |t|
     t.integer  "user_id",     null: false
     t.string   "column_hash", null: false
-    t.string   "item_id",     null: false
+    t.string   "item_id"
     t.integer  "item_time",   null: false
     t.integer  "unread_time", null: false
     t.datetime "created_at",  null: false

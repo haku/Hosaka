@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :columns do |t|
       t.belongs_to :user,        null: false, index:true
       t.string     :column_hash, null: false
-      t.string     :item_id,     null: false
+      t.string     :item_id
       t.integer    :item_time,   null: false
       t.integer    :unread_time, null: false
       t.timestamps               null: false
