@@ -114,6 +114,7 @@ class MeHandler < Sinatra::Base
       end
     end
 
+    # TODO filter response based on what was posted.
     user_columns_as_hashes(user).to_json
   end
 
