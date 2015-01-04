@@ -26,6 +26,8 @@ Data Format
 }
 ```
 
+| Field                | Notes                                                 |
+| -----                | -----                                                 |
 | `column_hash`        | sha1 of `"#{account_identifier}:#{column_resource}"`. |
 | `account_identifier` | Consistent account identifier, e.g. account title.    |
 | `column_resource`    | 'timeline', 'lists/foo', 'facebook/3432342/me/home'.  |
