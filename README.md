@@ -26,15 +26,12 @@ Data Format
 }
 ```
 
-| Field            | Notes                                                        |
-| -----            | -----                                                        |
-| `column_hash`    | sha1 of `"#{account_type}:#{user_name}:#{column_resource}"`. |
-| `account_type`   | 'twitter', 'successwhale'.                                   |
-| `user_name`      | Twitter numeric account ID, SuccessWhale user name.          |
-| `column_reource` | 'timeline', 'lists/foo', 'facebook/3432342/me/home'.         |
-| `item_id`        | SID of top item in list.                                     |
-| `item_time`      | epoch time in seconds.                                       |
-| `unread_time`    | epoch time in seconds.                                       |
+| `column_hash`        | sha1 of `"#{account_identifier}:#{column_resource}"`. |
+| `account_identifier` | Consistent account identifier, e.g. account title.    |
+| `column_resource`    | 'timeline', 'lists/foo', 'facebook/3432342/me/home'.  |
+| `item_id`            | SID of top item in list.                              |
+| `item_time`          | epoch time in seconds.                                |
+| `unread_time`        | epoch time in seconds.                                |
 
 Resolve merge conflicts by keeping version with largest `item_time`,
 i.e. furthest progress though column.
