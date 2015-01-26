@@ -29,7 +29,7 @@ class PublicHandler < Sinatra::Base
   end
 
   get '/desu' do
-    'Needs more desu~'
+    "Needs more desu~\n#{request.ip}"
   end
 
 end
@@ -92,6 +92,7 @@ class MeHandler < Sinatra::Base
           # TODO validate item_id is not silly.
           item_id:     unsafe_new_col['item_id'],
           # TODO replace .to_i with some actual validation.
+          # TODO check times are not in the future.
           item_time:   unsafe_new_col['item_time'].to_i,
           unread_time: unsafe_new_col['unread_time'].to_i
         }
