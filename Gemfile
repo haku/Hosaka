@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '~> 2.7'
 
 gem 'sinatra', '~> 2.0.7'
-gem 'activerecord', '~> 6.0.0'
+gem 'activerecord', '~> 6.0.3'
 gem 'sinatra-activerecord', '~> 2.0.14'
 
 group :development do
