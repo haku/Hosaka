@@ -1,23 +1,23 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (6.0.3.4)
-      activesupport (= 6.0.3.4)
-    activerecord (6.0.3.4)
-      activemodel (= 6.0.3.4)
-      activesupport (= 6.0.3.4)
-    activesupport (6.0.3.4)
+    activemodel (6.0.5.1)
+      activesupport (= 6.0.5.1)
+    activerecord (6.0.5.1)
+      activemodel (= 6.0.5.1)
+      activesupport (= 6.0.5.1)
+    activesupport (6.0.5.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     bond (0.5.1)
-    concurrent-ruby (1.1.7)
-    i18n (1.8.5)
+    concurrent-ruby (1.1.10)
+    i18n (1.11.0)
       concurrent-ruby (~> 1.0)
     kgio (2.11.3)
-    minitest (5.14.2)
+    minitest (5.16.2)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     pg (1.1.4)
@@ -54,18 +54,18 @@ GEM
       ripl-multi_line (>= 0.2.4)
       ripl-rack (>= 0.2.0)
       sinatra (>= 1.2.1)
-    tzinfo (1.2.8)
+    tzinfo (1.2.9)
       thread_safe (~> 0.1)
     unicorn (5.5.5)
       kgio (~> 2.6)
       raindrops (~> 0.7)
-    zeitwerk (2.4.2)
+    zeitwerk (2.6.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord (~> 6.0.0)
+  activerecord (~> 6.0.5)
   pg (~> 1.1.4)
   shotgun
   sinatra (~> 2.0.7)
